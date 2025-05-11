@@ -1,0 +1,19 @@
+<div class="chartsSection">
+  <button class="addBtn" mat-flat-button (click)="onAddChartClick()">
+    <mat-icon>add</mat-icon>
+    ADD CHART
+  </button>
+  @if (false) {
+    <p class="noChart">No charts</p>
+  } @else {
+    <mat-list>
+      @for (chart of filteredCountriesData(); track chart.id) {
+        <mat-list-item>
+          <a [routerLink]="['/charts', chart.id]" routerLinkActive="active">
+            <app-list-item [item]="{ name: chart.category + ' of ' + chart.country, id: chart.id }"/>
+          </a>
+        </mat-list-item>
+      }
+    </mat-list>
+  }
+</div>

@@ -1,0 +1,23 @@
+@use 'variables' as vars;
+
+:host {
+
+  form {
+
+    mat-dialog-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 5px;
+
+      .axis {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    .cancelBtn {
+      color: vars.$secondary-button-color;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<app-navbar />
+<mat-card>
+  @if (appService.isMobileChartsMenuOpen()) {
+    <app-chart-list />
+  }
+  <mat-card-content>
+    <router-outlet/>
+  </mat-card-content>
+</mat-card>
+

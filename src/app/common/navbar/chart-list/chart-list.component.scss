@@ -1,0 +1,43 @@
+@use 'variables' as vars;
+
+:host {
+  position: absolute;
+  width: 100%;
+  background-color: vars.$card-color;
+  z-index: 1000;
+
+  .chartsSection {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    mat-list-item {
+      padding: 0;
+
+      .active {
+        background-color: vars.$selected-item-color;
+      }
+    }
+
+    .addBtn {
+      width: 100%;
+    }
+
+    .noChart {
+      color: vars.$disabled-text-color;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  :host {
+    height: 100%;
+    padding: 16px;
+
+    .chartsSection {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+}

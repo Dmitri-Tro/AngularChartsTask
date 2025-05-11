@@ -1,0 +1,63 @@
+@use '@angular/material' as mat;
+@use 'variables' as vars;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: vars.$font, "Helvetica Neue", sans-serif;
+  color: vars.$text-color;
+  background-color: vars.$background-color;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: vars.$font-weight-bold;
+  margin: 0;
+}
+
+html {
+  color-scheme: light;
+  @include mat.theme((
+          typography: vars.$font,
+          density: (scale: 0),
+          appearance: outline,
+  ));
+  @include mat.card-overrides((
+          elevated-container-color: vars.$card-color,
+          elevated-container-elevation: none,
+  ));
+  @include mat.sidenav-overrides((
+          content-background-color: vars.$card-color,
+  ));
+  @include mat.form-field-overrides((
+          filled-active-indicator-height: 0px,
+          filled-focus-active-indicator-height: 0px,
+          filled-container-color: vars.$filled-input-color,
+          filled-focus-label-text-color: --mat-sys-on-surface-variant,
+          filled-caret-color: --mat-sys-on-surface-variant,
+          outlined-focus-label-text-color: --mat-sys-on-surface-variant,
+          outlined-focus-outline-color: --mat-sys-on-surface-variant,
+          container-text-size: vars.$text-size-p,
+  ));
+  @include mat.button-overrides((
+          filled-container-shape: vars.$input-border-radius,
+  ));
+  @include mat.menu-overrides((
+          item-hover-state-layer-color: vars.$selected-item-color,
+          item-focus-state-layer-color: vars.$selected-item-color,
+  ));
+  @include mat.dialog-overrides((
+          container-shape: vars.$input-border-radius,
+  ));
+}
+
+

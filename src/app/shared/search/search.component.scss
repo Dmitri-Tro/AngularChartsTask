@@ -1,0 +1,18 @@
+@use 'variables' as vars;
+
+:host {
+  display: flex;
+
+  .search-input {
+    width: 100%;
+    background-color: vars.$filled-input-color;
+    border-radius: vars.$input-border-radius;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .search-input {
+    margin-bottom: 0;
+  }
+}

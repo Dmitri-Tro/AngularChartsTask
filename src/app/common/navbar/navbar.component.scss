@@ -1,0 +1,21 @@
+@use 'variables' as vars;
+
+:host {
+  display: inline-block;
+  width: 256px;
+  height: 100vh;
+  background-color: vars.$card-color;
+  border-right: vars.$card-border;
+  padding: vars.$main-margin vars.$secondary-margin;
+}
+
+@media (max-width: 1024px) {
+  :host {
+    display: inline-block;
+    width: 100%;
+    height: max-content;
+    border-right: none;
+    border-bottom: vars.$card-border;
+    padding: vars.$secondary-margin;
+  }
+}

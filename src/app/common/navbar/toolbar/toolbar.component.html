@@ -1,0 +1,34 @@
+<mat-toolbar>
+  @if (isSearchOpen()) {
+    <img class="logo"
+         src="/logo-img.svg"
+         alt="Logoipsum"
+    />
+    <app-search class="search-input" (toggleSearch)="toggleSearch($event)"/>
+  } @else {
+    <img class="logo"
+         src="/fullLogo.svg"
+         alt="Logoipsum"
+    />
+    @if (appService.isMobileChartsMenuOpen()) {
+      <button mat-icon-button
+              class="searchToggle"
+              aria-label="Open search field"
+              (click)="toggleSearch(true)"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    }
+  }
+  <button mat-icon-button
+          class="menuBtn"
+          aria-label="Charts menu toggle"
+          (click)="toggleMenu()"
+  >
+    @if (appService.isMobileChartsMenuOpen()) {
+      <mat-icon>close</mat-icon>
+    } @else {
+      <mat-icon>menu</mat-icon>
+    }
+  </button>
+</mat-toolbar>

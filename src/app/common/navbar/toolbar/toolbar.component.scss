@@ -1,0 +1,26 @@
+mat-toolbar {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding: 0;
+
+  .logo {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .menuBtn {
+    margin-right: 0;
+  }
+
+  .search-input {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  mat-toolbar {
+    display: flex;
+  }
+}

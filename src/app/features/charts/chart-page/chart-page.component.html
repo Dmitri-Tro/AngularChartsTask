@@ -1,0 +1,12 @@
+<div class="header">
+  <h3>{{ chartName() }}</h3>
+  <app-datepicker
+      [start]="startYear"
+      [end]="endYear"
+      (dateRangeChange)="onDateRangeChange($event)"
+  />
+</div>
+<app-chart [start]="startYear" [end]="endYear" />
+<p class="chartDescription">
+  {{chartData()?.description}}
+</p>

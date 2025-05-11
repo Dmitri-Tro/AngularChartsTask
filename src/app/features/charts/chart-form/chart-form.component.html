@@ -1,0 +1,72 @@
+<form [formGroup]="chartForm" (ngSubmit)="onChartFormSubmit()">
+  <h4 mat-dialog-title>{{ title }}</h4>
+  <mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Country Name</mat-label>
+      <input matInput formControlName="name"/>
+      @if (chartForm.get('name')!.invalid) {
+        <mat-error>{{ nameErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Chart Type</mat-label>
+      <mat-select formControlName="type">
+        @for (type of chartTypes; track type) {
+          <mat-option [value]="type">{{ type.toUpperCase() }}</mat-option>
+        }
+      </mat-select>
+      @if (chartForm.get('type')!.invalid) {
+        <mat-error>{{ typeErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Chart Color</mat-label>
+      <mat-select formControlName="color">
+        @for (color of chartColors; track color) {
+          <mat-option [value]="color">{{ color.toUpperCase() }}</mat-option>
+        }
+      </mat-select>
+      @if (chartForm.get('color')!.invalid) {
+        <mat-error>{{ colorErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Dataseries</mat-label>
+      <mat-select formControlName="dataseries">
+        @for (dataseries of chartDataseries; track dataseries) {
+          <mat-option [value]="dataseries">{{ dataseries.toUpperCase() }}</mat-option>
+        }
+      </mat-select>
+      @if (chartForm.get('dataseries')!.invalid) {
+        <mat-error>{{ dataseriesErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    <div class="axis">
+      <mat-form-field>
+        <mat-label>X-axis name</mat-label>
+        <input matInput formControlName="xAxis"/>
+        @if (chartForm.get('xAxis')!.invalid) {
+          <mat-error>{{ xAxisErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Y-axis name</mat-label>
+        <input matInput formControlName="yAxis"/>
+        @if (chartForm.get('yAxis')!.invalid) {
+          <mat-error>{{ yAxisErrorMessage() }}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Text description</mat-label>
+      <input matInput formControlName="description"/>
+      @if (chartForm.get('description')!.invalid) {
+        <mat-error>{{ descriptionErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button class="cancelBtn" type="button" (click)="onCancelClick()">CANCEL</button>
+    <button mat-button type="submit">{{actionButtonText}}</button>
+  </mat-dialog-actions>
+</form>

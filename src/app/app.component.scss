@@ -1,0 +1,54 @@
+@use 'variables' as vars;
+
+:host {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  mat-card {
+    width: 100%;
+    height: 100%;
+    background-color: vars.$background-color;
+
+    mat-card-content {
+      height: 100%;
+      background-color: vars.$card-color;
+      border: vars.$card-border;
+      border-radius: vars.$card-border-radius;
+      padding: 120px;
+      margin: vars.$main-margin;
+    }
+
+    .mat-mdc-card-content:first-child {
+      padding: 120px;
+    }
+
+    .mat-mdc-card-content:last-child {
+      padding: 120px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  :host {
+    flex-direction: column;
+
+    mat-card {
+
+      mat-card-content {
+        border: none;
+        border-radius: 0;
+        padding: 16px;
+        margin: 0;
+      }
+
+      .mat-mdc-card-content:first-child {
+        padding: 16px;
+      }
+
+      .mat-mdc-card-content:last-child {
+        padding: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<mat-form-field class="search-input">
+  <mat-icon matPrefix>search</mat-icon>
+  <mat-label>Search...</mat-label>
+  <input #inputRef
+         matInput matNativeControl
+         [ngModel]="searchService.search()"
+         (ngModelChange)="searchService.set($event)"
+  />
+</mat-form-field>

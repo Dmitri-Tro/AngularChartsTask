@@ -1,0 +1,14 @@
+@use '../../../../../styles/variables' as vars;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: inherit;
+  border-radius: vars.$input-border-radius;
+
+  .itemSpan {
+    padding-left: vars.$secondary-margin;
+  }
+}
